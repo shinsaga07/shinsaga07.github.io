@@ -1,0 +1,367 @@
+/* 1) 避免 logo 被裁切：放開 overflow，並讓 navbar 有足夠高度 */
+header.navigation,
+header.navigation .navbar {
+  overflow: visible !important;
+}
+
+header.navigation .navbar {
+  min-height: 150px; /* 你可以調 80~100，看你logo高度 */
+  position: relative;
+}
+
+/* 2) Logo 尺寸：只改 navbar-brand 的 img，不影響其他圖片 */
+header.navigation .navbar-brand img {
+  max-height: 120px;
+  width: auto;
+}
+
+/* 3) 讓「中間那顆 logo」真正置中（只針對 mx-auto 那顆） */
+header.navigation a.navbar-brand.mx-auto.desktop-view {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 !important;
+  z-index: 2;
+}
+
+/* 4) 左側 icon（mr-auto 那串）固定靠左、不要亂飄 */
+header.navigation ul.navbar-nav.mr-auto {
+  position: relative;
+  z-index: 3;
+  margin-right: auto !important;
+}
+
+/* 5) 右側 About 那串固定靠右 */
+header.navigation #navigation > ul.navbar-nav {
+  position: relative;
+  z-index: 3;
+  margin-left: auto !important;
+}
+
+/* 6) 搜尋區固定在最右邊，避免被擠走 */
+header.navigation .search {
+  position: relative;
+  z-index: 3;
+  margin-left: 12px;
+}
+
+footer a img {
+  max-height: 120px;  /* 想更小就改 56 / 64 */
+  width: auto;
+}
+
+/* social link：取消主題預設的綠底方塊 */
+.social-links .social-link {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 圖片 icon 尺寸 */
+.social-links .social-icon-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
+}
+
+/* 如果你同時也會用 <i class="ti-..."> 這種 icon，統一大小 */
+.social-links i {
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* ===== Header social icons: 強制縮小，不讓它炸版 ===== */
+header.navigation .navbar-nav .nav-link {
+  padding: 0.6rem 0.6rem; /* 保留原本間距，不要被圖片撐開 */
+}
+
+header.navigation .navbar-nav .nav-link img.header-social-icon {
+  width: 30px !important;
+  height: 30px !important;
+  object-fit: contain;
+  display: block;
+}
+
+/* 讓左側 social icon 排列正常（不被 line-height 影響） */
+header.navigation .navbar-nav .nav-link.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* ===== 強制 Header：Logo + Menu 靠左，Search 靠右 ===== */
+
+/* 1) 讓 #navigation 這層變成 flex，並靠左 */
+header.navigation #navigation {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+/* 2) Logo 固定在最左（不要被撐開） */
+header.navigation #navigation > a.navbar-brand.desktop-view {
+  flex: 0 0 auto !important;
+  margin-right: 16px !important;
+}
+
+/* 3) Menu：取消主題的 100% 寬度/置中，改成靠左 */
+header.navigation #navigation > ul.navbar-nav {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  justify-content: flex-start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;  /* 把 search 推到右邊 */
+  text-align: left !important;
+}
+
+/* 4) 如果主題把 li 撐太開，順便收一下 */
+header.navigation #navigation > ul.navbar-nav > .nav-item {
+  white-space: nowrap;
+}
+
+/* 5) Search 保持在最右邊 */
+header.navigation #navigation > .search {
+  flex: 0 0 auto !important;
+  margin-left: 0 !important;
+}
+
+/* Header 主選單文字放大 */
+header.navigation .navbar-nav .nav-link {
+  font-size: 20px;   /* 可改 20px / 22px */
+  font-weight: 1000;  /* 稍微加粗，可選 */
+}
+
+/* ===== 修正 header 與內容之間過大的空白 ===== */
+
+header.navigation {
+  margin-bottom: 0 !important;
+  padding-bottom: 8px;
+}
+
+.section {
+  padding-top: 40px !important;
+}
+
+.section-sm {
+  padding-top: 30px !important;
+}
+
+main {
+  margin-top: 0 !important;
+}
+
+/* 移除 sidebar（About / Category / Social）左側直線與多餘間距 */
+.widgets {
+  border-left: none !important;
+  padding-left: 0 !important;
+}
+
+/* sidebar 整體 */
+.sidebar-menu {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* 第一層（程式語言 / Web） */
+.sidebar-menu .menu-parent {
+  padding-left: 16px;   /* 👈 往右推 */
+  margin-bottom: 12px;
+}
+
+/* 第二層（Go / Python / HTML / CSS） */
+.sidebar-menu .menu-children {
+  padding-left: 20px;   /* 子層再多一點 */
+  margin-top: 6px;
+}
+
+/* 子分類項目 */
+.sidebar-menu .menu-child {
+  margin: 6px 0;
+}
+
+/* Sidebar 主分類：黑體＋粗字 */
+.menu-root {
+  font-size: 20px;
+  font-weight: 700;        /* 粗體 */
+  color: #000000;             /* 黑色 */
+}
+
+/* 箭頭跟著一起變粗、變黑 */
+.menu-root span {
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 2px;
+
+  padding-left: 0;
+  gap: 6px;  
+}
+
+/* 子分類整齊縮排 */
+.widget ul ul {
+  margin-top: 6px;
+}
+
+/* 子分類文字大小 */
+.widget ul ul a {
+  display: inline-block;
+  padding: 2px 0;
+  opacity: 0.9;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+
+
+/* 文章頁標題 */
+section.section-sm .col-lg-8.mx-auto > h2:has(+ .post-meta) {
+  font-size: 28px !important;
+}
+
+/* 分類標籤 → 標題 */
+section.section-sm .col-lg-8.mx-auto a[href^="/categories"] {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* 標題本身上下間距 */
+section.section-sm .col-lg-8.mx-auto > h2 {
+  margin-top: 8px !important;
+  margin-bottom: 15px !important;
+}
+
+/* 作者 / 日期 */
+section.section-sm .col-lg-8.mx-auto .post-meta.mb-3 {
+  margin-bottom: 25px !important;
+}
+
+/* About 頁社群 icon：固定大小，避免原圖炸版 */
+.social-links img.social-icon{
+  width: 34px !important;
+  height: 34px !important;
+  object-fit: contain;
+  display: block;
+}
+
+/* About 頁社群排列 */
+.social-links{
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.social-links a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-links{
+  margin-bottom: 20px !important;
+}
+
+/* 關於我頁：頭像尺寸 */
+.section-sm .rounded-circle {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Logo 區塊專用 */
+.logo-block img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 24px;
+  display: block;
+  margin-top: 20px !important;
+}
+
+.character-block img{
+  margin-bottom: 30px !important;
+}
+
+/* ===== 強制 Cover 置中（覆蓋所有舊規則） ===== */
+/* 外框一定置中 */
+.cover-wide{
+  display: flex !important;
+  justify-content: center !important;
+
+  width: 100% !important;           /* 不用 100vw，避免視覺偏移 */
+  margin: 12px auto 36px !important;
+  padding: 0 16px !important;       /* 左右留白 */
+}
+
+/* 內層真正的影片寬度在這裡控制 */
+.cover-wide .cover-embed{
+  width: min(1100px, 100%) !important; /* 想大就改 1100 */
+  position: relative !important;
+  padding-top: 56.25% !important;      /* 16:9 */
+}
+
+/* iframe 填滿 */
+.cover-wide .cover-embed iframe{
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+  border-radius: 12px;
+}
+
+/* ===== Sidebar: 收緊分類/標題/社群之間的間距 ===== */
+
+/* Sidebar 每個 widget 之間的空白（主題通常給很大） */
+.widgets .widget {
+  margin-bottom: 12px !important;
+  padding-bottom: 0 !important;
+}
+
+/* 分類清單本身的上下間距 */
+.widgets .widget ul {
+  margin-bottom: 8px !important;
+}
+
+/* 清單項目的間距（含你的下拉分類那段） */
+.widgets .widget ul li {
+  margin-bottom: 6px !important;
+}
+
+/* 「哪裡可以找到我」標題上下間距 */
+.widgets .widget-title {
+  margin-top: 5px !important;
+  margin-bottom: 15px !important;
+}
+
+/* 標題底下那條線（主題會留很大空） */
+.widgets .widget-title:before,
+.widgets .widget-title:after {
+  margin-top: 5px !important;
+  margin-bottom: 15px !important;
+}
+
+/* Sidebar 裡的 social-links：不要用 About 頁那個 margin-bottom:20 */
+.widgets .social-links {
+  margin-top: 6px !important;
+  margin-bottom: 0 !important;
+  gap: 10px !important;
+}
+
+/* Sidebar icon 之間距離 */
+.widgets .social-links a {
+  margin: 0 !important;
+}
+
+/* 修正數字字型（關閉花體 / 比例數字） */
+body {
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
