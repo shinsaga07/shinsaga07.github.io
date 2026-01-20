@@ -135,8 +135,8 @@ header.navigation #navigation > .search {
 
 /* Header 主選單文字放大 */
 header.navigation .navbar-nav .nav-link {
-  font-size: 20px;   /* 可改 20px / 22px */
-  font-weight: 1000;  /* 稍微加粗，可選 */
+  font-size: 18px;   /* 可改 20px / 22px */
+  font-weight: 600;  /* 稍微加粗，可選 */
 }
 
 /* ===== 修正 header 與內容之間過大的空白 ===== */
@@ -170,59 +170,9 @@ main {
   margin-left: 0;
 }
 
-/* 第一層（程式語言 / Web） */
-.sidebar-menu .menu-parent {
-  padding-left: 16px;   /* 👈 往右推 */
-  margin-bottom: 12px;
-}
-
-/* 第二層（Go / Python / HTML / CSS） */
-.sidebar-menu .menu-children {
-  padding-left: 20px;   /* 子層再多一點 */
-  margin-top: 6px;
-}
-
-/* 子分類項目 */
-.sidebar-menu .menu-child {
-  margin: 6px 0;
-}
-
-/* Sidebar 主分類：黑體＋粗字 */
-.menu-root {
-  font-size: 20px;
-  font-weight: 700;        /* 粗體 */
-  color: #000000;             /* 黑色 */
-}
-
-/* 箭頭跟著一起變粗、變黑 */
-.menu-root span {
-  font-size: 20px;
-  font-weight: 700;
-  margin-left: 2px;
-
-  padding-left: 0;
-  gap: 6px;  
-}
-
-/* 子分類整齊縮排 */
-.widget ul ul {
-  margin-top: 6px;
-}
-
-/* 子分類文字大小 */
-.widget ul ul a {
-  display: inline-block;
-  padding: 2px 0;
-  opacity: 0.9;
-  font-size: 15px;
-  font-weight: 400;
-}
-
-
-
 /* 文章頁標題 */
 section.section-sm .col-lg-8.mx-auto > h2:has(+ .post-meta) {
-  font-size: 28px !important;
+  font-size: 23px !important;
 }
 
 /* 分類標籤 → 標題 */
@@ -337,8 +287,8 @@ section.section-sm .col-lg-8.mx-auto .post-meta.mb-3 {
 
 /* 「哪裡可以找到我」標題上下間距 */
 .widgets .widget-title {
-  margin-top: 5px !important;
-  margin-bottom: 15px !important;
+  margin-top: 15px !important;
+  margin-bottom: 10px !important;
 }
 
 /* 標題底下那條線（主題會留很大空） */
@@ -364,4 +314,99 @@ section.section-sm .col-lg-8.mx-auto .post-meta.mb-3 {
 body {
   font-variant-numeric: lining-nums tabular-nums;
   font-feature-settings: "lnum" 1, "tnum" 1;
+}
+
+/* ===== 1) 標題置中 ===== */
+.widget.widget-categories .widget-title {
+  text-align: center;
+}
+
+/* ===== 2) 整棵樹置中，但樹內文字左對齊 ===== */
+.widget-categories .cat-center {
+  text-align: center; /* 讓裡面的 inline-block 置中 */
+}
+
+.widget-categories .cat-tree {
+  display: inline-block; /* ← 關鍵：讓 ul 變成可被置中的「內容寬」 */
+  width: 200px;          /* ✅ 控制整棵樹的寬度（你要更窄就調小） */
+  max-width: 100%;
+  margin: 0 auto;        /* ✅ 置中 */
+  text-align: left;      /* ✅ 樹內文字靠左 */
+  padding: 0;
+}
+
+/* 清單基礎 */
+.widget-categories .cat-tree,
+.widget-categories .cat-tree ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 每個項目（預設給線/節點欄位） */
+.widget-categories .cat-item {
+  position: relative;
+  padding-left: 28px;
+}
+
+/* root / leaf 連結 */
+.widget-categories .cat-root,
+.widget-categories .cat-leaf {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  line-height: 1.6;
+  padding: 5px 8px;
+  font-size: 15px;
+}
+
+.widget-categories .cat-text { flex: 1; min-width: 0; }
+.widget-categories .cat-arrow { margin-left: auto; opacity: 0.65; }
+
+/* 子層固定縮排 */
+.widget-categories .cat-children {
+  padding-left: 28px;
+  margin-top: 6px;
+}
+
+/* ===== 3) 左側線：只畫在「有父層的項目」(也就是子分類) ===== */
+/* 你 root 的 li 有 class: cat-parent；子分類的 li 是 cat-item（但不是 cat-parent） */
+.widget-categories .cat-children > .cat-item::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(0,0,0,0.12);
+}
+
+/* 子分類的菱形（leaf 才要） */
+.widget-categories .cat-leaf::before {
+  content: "";
+  position: absolute;
+  left: -19px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  transform: translateY(-50%) rotate(45deg);
+  border: 1px solid rgba(0,0,0,0.20);
+  background: #fff;
+  border-radius: 1px;
+}
+
+/* 4) root：不要菱形、也不要線欄位造成看起來怪 */
+.widget-categories .cat-parent {
+  padding-left: 0;            /* root 不留節點欄位 */
+}
+
+.widget-categories .cat-root {
+  padding-left: 0;            /* root 文字直接對齊 */
+}
+
+/* 最後一個子項目把線縮短 */
+.widget-categories .cat-children > .cat-item:last-child::before {
+  bottom: 50%;
 }
