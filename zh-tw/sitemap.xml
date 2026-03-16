@@ -2,6 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://shinsaga07.github.io/blog/</loc>
+    <lastmod>2026-03-17T00:31:47+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja-JP"
+                href="https://shinsaga07.github.io/ja/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://shinsaga07.github.io/blog/"
+                />
+  </url><url>
+    <loc>https://shinsaga07.github.io/categories/</loc>
+    <lastmod>2026-03-17T00:31:47+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja-JP"
+                href="https://shinsaga07.github.io/ja/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://shinsaga07.github.io/categories/"
+                />
+  </url><url>
+    <loc>https://shinsaga07.github.io/categories/immortal/</loc>
+    <lastmod>2026-03-17T00:31:47+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja-JP"
+                href="https://shinsaga07.github.io/ja/categories/immortal/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://shinsaga07.github.io/categories/immortal/"
+                />
+  </url><url>
+    <loc>https://shinsaga07.github.io/blog/immortal-6/</loc>
+    <lastmod>2026-03-17T00:31:47+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja-JP"
+                href="https://shinsaga07.github.io/ja/blog/immortal-6/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://shinsaga07.github.io/blog/immortal-6/"
+                />
+  </url><url>
+    <loc>https://shinsaga07.github.io/</loc>
+    <lastmod>2026-03-17T00:31:47+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja-JP"
+                href="https://shinsaga07.github.io/ja/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-TW"
+                href="https://shinsaga07.github.io/"
+                />
+  </url><url>
     <loc>https://shinsaga07.github.io/categories/about_shinsaga/</loc>
     <lastmod>2026-01-25T14:46:00+08:00</lastmod>
     <xhtml:link
@@ -15,32 +80,6 @@
                 href="https://shinsaga07.github.io/categories/about_shinsaga/"
                 />
   </url><url>
-    <loc>https://shinsaga07.github.io/blog/</loc>
-    <lastmod>2026-01-25T14:46:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja-JP"
-                href="https://shinsaga07.github.io/ja/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://shinsaga07.github.io/blog/"
-                />
-  </url><url>
-    <loc>https://shinsaga07.github.io/categories/</loc>
-    <lastmod>2026-01-25T14:46:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja-JP"
-                href="https://shinsaga07.github.io/ja/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://shinsaga07.github.io/categories/"
-                />
-  </url><url>
     <loc>https://shinsaga07.github.io/categories/other/</loc>
     <lastmod>2026-01-25T14:46:00+08:00</lastmod>
     <xhtml:link
@@ -52,19 +91,6 @@
                 rel="alternate"
                 hreflang="zh-TW"
                 href="https://shinsaga07.github.io/categories/other/"
-                />
-  </url><url>
-    <loc>https://shinsaga07.github.io/</loc>
-    <lastmod>2026-01-25T14:46:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja-JP"
-                href="https://shinsaga07.github.io/ja/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://shinsaga07.github.io/"
                 />
   </url><url>
     <loc>https://shinsaga07.github.io/blog/about_more_detail/</loc>
@@ -208,19 +234,6 @@
                 rel="alternate"
                 hreflang="zh-TW"
                 href="https://shinsaga07.github.io/blog/dream-1/"
-                />
-  </url><url>
-    <loc>https://shinsaga07.github.io/categories/immortal/</loc>
-    <lastmod>2026-01-18T05:11:47+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja-JP"
-                href="https://shinsaga07.github.io/ja/categories/immortal/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-TW"
-                href="https://shinsaga07.github.io/categories/immortal/"
                 />
   </url><url>
     <loc>https://shinsaga07.github.io/blog/immortal-5/</loc>
